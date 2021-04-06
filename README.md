@@ -7,7 +7,7 @@ References:
 
 Detecting threats at a lower level than traditional IOCs (eg C2 IPs, domains and uri) makes for a more robust detection. This is important, because any changes to these traditional factors (domain/IP/uri etc) are often and easily amended by the threat actor and this results in simple IOC based detections failing. Another benefit of using lower level behavioral detection logic (as provided in this package) is they are vastly less prone to False Positive detections. 
 
-The logic of this detection algorithm involves looking for a very specific consecutive pattern of FIVE HTTP Cookies that are passed between the C2 and the implant as part of the negotiation between them. This then requires a stateful approach - which is perfectly suited to Zeek's event driven detection engine.
+The detection logic we use in this demonstration involves looking for a consecutive pattern of Cookie transactions. This requires a stateful approach - which is perfectly suited to Zeek's event driven detection engine.
 
 There are various other ways to detect this malware with Zeek. This script has been prepared as a tutorial style demonstration of one such technique, chosen as it highlights how Zeek's state keeping can be used a fairly intuitive and practical way to detect modern C2 malware.  
 Credit to Intezer for their research on RedXOR, refer to this writeup for a low level description of the malware.
