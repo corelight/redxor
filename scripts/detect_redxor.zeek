@@ -21,17 +21,17 @@ event http_all_headers(c: connection, is_orig: bool, hlist: mime_header_list)
     
     # Pre-condition 1: We are only interested in where the method is set, and when it is the POST method - otherwise return straight away.
     # If we don't initially check that the c$http$method exists, there will be (non fatal) run time errors that will fill up reporter.log, so lets avoid that.
-    if (!c$http?$method) { return; }
+    if (!c$http?$method) return;
     # Now check if it's a POST method.
-    if (c$http$method != "POST") { return; }
+    if (c$http$method != "POST") return;
     
     # Pre-condition 2: all FIVE cookies are contained in the first THREE HTTP trans_depth levels,
     # So for deep HTTP sessions, we can return quickly like so:
-    if (c$http$trans_depth > 3)  { return; }
+    if (c$http$trans_depth > 3) return;
     
     # Pre-condition 3: We're not interested in HTTP sessions with less than four headers. 
     # The sample has exactly four headers, but let's use 4 as a minimum in case a proxy adds headers.
-    if (|hlist| < 4) { return; }
+    if (|hlist| < 4) return;
     
     # Now the pre conditions are satisfied, we can continue with the search logic 
     if (c$http$trans_depth == 1) 
