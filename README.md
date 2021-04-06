@@ -17,4 +17,5 @@ The script was prepared from an _abstraction_ of the actual pcap, which could no
 
 The red markers on following diagram shows the state based detection logic employed by the script at a high level. Further to this, the [script](scripts/detect_redxor.zeek) itself is heavily commented, so to describe the reasons and the thinking behind some of the more technical aspects.
 
-![alt text](./images/C2.png)
+![alt text](./images/C2.png)  
+(Credit original wireshark screencap: Intezer)
