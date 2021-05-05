@@ -2,7 +2,7 @@
 This package serves as a demonstration of how Zeek can be used to detect the Linux backdoor "redXOR" using state based methods.
 
 References:
-- [Corelight blog](https://corelight.blog/)
+- [Corelight blog](https://corelight.blog/2021/04/20/detect-c2-redxor-with-state-based-functionality/)
 - https://www.intezer.com/blog/malware-analysis/new-linux-backdoor-redxor-likely-operated-by-chinese-nation-state-actor/  
 
 Detecting threats at a lower level than traditional IOCs (eg C2 IPs, domains and uri) makes for a more robust detection. This is important, because any changes to these traditional factors (domain/IP/uri etc) are often and easily amended by the threat actor and this results in simple IOC based detections failing. Another benefit of using lower level behavioral detection logic (as provided in this package) is they are vastly less prone to False Positive detections. 
